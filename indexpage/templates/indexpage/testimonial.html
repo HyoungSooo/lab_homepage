@@ -1,0 +1,40 @@
+{% extends './base.html' %}
+{% load static %}
+<!-- Testimonial Start -->
+{% block content %}
+  <div class="container-xxl py-5">
+    <div class="container">
+      <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px">
+        <p class="d-inline-block bg-secondary text-primary py-1 px-4">
+          Pubilcation
+        </p>
+        <h1 class="text-uppercase">Recent Publications</h1>
+      </div>
+      <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+        {% for obj in data %}
+          <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='{{obj.image.url}}' alt=''>">
+            <h4 class="text-uppercase">{{obj.title}}</h4>
+            <p class="text-white">{{obj.where_to_find}}</p>
+            <a href = {{obj.link}}><span class="fs-5">{{obj.link}}</span></a>
+            <p>
+            {% for obj_ in obj.Members.all %}
+              <span class="fs-5">{{obj_}}</span>
+            {% endfor %}
+            </p>
+          </div>
+        {% endfor %}
+        {% comment %} <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='img/testimonial-2.jpg' alt=''>">
+          <h4 class="text-uppercase">Client Name</h4>
+          <p class="text-primary">Profession</p>
+          <span class="fs-5">Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</span>
+        </div>
+        <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='img/testimonial-3.jpg' alt=''>">
+          <h4 class="text-uppercase">Client Name</h4>
+          <p class="text-primary">Profession</p>
+          <span class="fs-5">Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</span>
+        </div> {% endcomment %}
+      </div>
+    </div>
+  </div>
+  <!-- Testimonial End -->
+{% endblock content %}
