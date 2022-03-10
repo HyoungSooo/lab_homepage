@@ -25,4 +25,6 @@ urlpatterns = [
     path('introduce', views.introduce, name='introduce'),
     path('pubilcation', views.pubilcation, name='pubilcation'),
     path('contact_us', views.contact_us, name='contact_us'),
+    path('post-detail/<int:post_id>',
+         views.post_detail, name='post-detail'),
 ]

@@ -2,6 +2,8 @@
 from django.shortcuts import render
 from django.template import RequestContext
 from django.views.generic import CreateView, DeleteView, ListView
+
+import indexpage
 from .models import IntroduceUs, WhatWeDo, PhotosTitle, PhotosTitle_Photos, Publications
 from django.views import generic
 # Create your views here.
@@ -51,3 +53,11 @@ def pubilcation(request):
 
 def contact_us(request):
     return render(request, 'indexpage/contact.html')
+
+
+def post_detail(request, post_id):
+    object = WhatWeDo.objects.get(id=post_id)
+    context = {
+        'object': object,
+    }
+    return render(request, 'indexpage/detail.html', context)

@@ -29,7 +29,15 @@ CATAGORY = {
 
 class WhatWeDo(models.Model):
     title = models.CharField(max_length=30, unique=True, blank=False)
-    description = models.TextField(max_length=300)
+    description = models.TextField(max_length=300, blank=True)
+
+    def __str__(self):
+        return self.title
+
+
+class WhatWeDoDetail(models.Model):
+    title = models.ForeignKey(
+        WhatWeDo, on_delete=models.CASCADE, related_name="whatwedo")
 
 
 class IntroduceUs(models.Model):
@@ -94,7 +102,8 @@ class Publications(models.Model):
     where_to_find = models.CharField(max_length=100)
 
     def __str__(self):
-      return self.title
+        return self.title
+
 
 class PublicationsMembers(models.Model):
     Publications = models.ForeignKey(

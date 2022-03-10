@@ -72,7 +72,7 @@
                 </p>
                 {% comment %} <span class="text-uppercase text-primary">From $15</span> {% endcomment %}
               </div>
-              <a class="btn btn-square" href="">
+              <a class="btn btn-square" href="{% url 'post-detail' obj.id %}">
                 <i class="fa fa-plus text-primary"></i>
               </a>
             </div>
@@ -184,15 +184,8 @@
               <div class="team-img position-relative overflow-hidden">
                 <img class="img-fluid-small" src={{obj.image.url}} alt=""/>
                 <div class="team-social">
-                  <a class="btn btn-square" href="">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                  <a class="btn btn-square" href="">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                  <a class="btn btn-square" href="">
-                    <i class="fab fa-instagram"></i>
-                  </a>
+                 <p>{{obj.Affiliation}}</p>
+                  <p>{{obj.email}}</p>
                 </div>
               </div>
               <div class="bg-secondary text-center p-4">
