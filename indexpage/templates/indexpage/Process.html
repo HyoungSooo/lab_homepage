@@ -1,0 +1,58 @@
+{% extends './base.html' %}
+{% load static %}
+{% block content %}
+  <div class="container">
+    <div class="container-title">
+      <h1 class="content-header">
+        Research and Development on Process Discovery and Prediction Intelligence
+      </h1>
+      <h1 class="content-header">
+        Supported by Bigdata-Mining and Deep-Learning Technologies
+      </h1>
+      <img class="header-img" src="{% static 'indexpage/img/Image1.png' %}" alt=""/>
+    </div>
+    <div class="divider"></div>
+    <div class="content">
+      <div class='sub-content'>
+        <img class="content-img" src="{% static 'indexpage/img/Image2.png' %}" alt=""/>
+      </div>
+      <div class="content-des">
+        <ul>
+          <li>[연구 목표]</li>
+          <p>
+            프로세스 라이프사이클 유지보수에 있어서 선제적으로 대처하는 프로엑티브 프로세스 관리 에코시스템을 구현하고자 빅데이터 마이닝 기반의 프로세스 발견 기술과 딥러닝 기반의 프로세스 예측 기술을 융합한 차세대 비즈니스 인텔리전스(BI: Business Intelligence)기술 개발하여 ‘프로엑티브 비피엠기반 엔터프라이즈’라는 새로운 기업정보시스템의 발전 모델 구축
+          </p>
+          <li>[연구 목적]</li>
+          <p>
+            많은 기업과 조직들이 프로세스기반 정보시스템(PAIS, Process-aware infromation system)의 중요성과 필요성을 인식하면서 워크플로우 및 비즈니스 프로세스 관리 시스템을 핵심기술로 하는 프로세스기반 정보시스템이 급속히 증가하고 있으며, 이와 함께 엔터프라이즈 전체의 업무 프로세스 처리 및 그에 따른 초대용량의 이력정보를 확보할 수 있게 되면서 프로세스 분석의 중요성이 대두됨 과거 연구가 엔터프라이즈 정보시스템의 실행이력으로 구성되는 이벤트로그 빅데이터로부터 마이닝 기술을 통해 과거의 프로세스기반 협업행위를 발견하는 것에서 발전하여, 본 연구에서는 최근 관심이 증폭되고 있는 딥러닝 기술을 통해 미래의 프로세스 예측 모델을 제공함으로써 업무프로세스 뿐만아니라 업무수행자 줌심의 업무행위관계, 자원배분관계, 정보확산관계 지식을 선제적으로 예측 발견하여, 프로세스 모델의 라이프사이클 유지관리와 자원할당 리엔지니어링 분야에 있어서 신기술에 장을 열고자 함
+          </p>
+
+          <li>[연구 내용]</li>
+          <p>
+            프로세스 발견 프로세스 실행이력 빅데이터의 시계열 빅로그 전처리를 전처리하고 이로부터 정보제어넷 기반 프로세스 모델을 마이닝을 통해 발견함으로써, 업무 프로세스 모델의 라이프사이클 관리를 위한 재설계/리엔지니어링과 자원할당에 대한 재계획/재배치에 활용 IEEE에서 발표한 이벤트 스트림 로그 국제표준포맷인 XES(XML Event Stream)기반의 시계열 실행 이벤트 로그 빅데이터세트로부터 순차적, 선택적, 병렬적, 반복적 유형의 제어흐름과 그에 따른 각 액티비티의 실행에 적용된 다양한 자원속성 마이닝
+          </p>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content-2">
+      <div class="content-img">
+        <img class="content-img" src="{% static 'indexpage/img/Image3.png' %}" alt=""/>
+
+        <img class="content-img" src={% static 'indexpage/img/Image4.png' %} alt=""/>
+      </div>
+      <div class="content-des">
+        <ul>
+          <li>프로세스 예측-모니터링</li>
+          <p>
+            시계열 빅로그 빅데이터를 딥러닝의 학습데이터로 활용하기 위해 인코딩 전처리를 수행하고, 다음에 수행할 단위업무를 확률을 기반하여 딥러닝을 통해 예측함으로써 남은 시간, 다음의 실행 액티비티, 작업부담, 비즈니스 목표대비 성과를 실시간으로 예측-모니터링 LSTM 딥러닝 예측 모델의 구현 시스템을 통해 On-Going Process Instance를 구성하는 액티비티 각각에 대한 다음 실행 액티비티를 확률을 기반으로 예측
+          </p>
+          <li>프로세스 예측-발견</li>
+          <p>
+            딥러닝을 통해 미래의 프로세스 모델을 발견하는데 요구되는 시계열 워크케이스들을 생성하는 예측-시퀀싱 기술을 수행하고, 이로부터 미래의 정보제어넷 기반 프로세스 모델을 발견함으로써 프로세스 예측 인텔리전스의 확보와 함께 선제적인 리엔지니어링, 자원할당의 프로엑티브 프로세스 관리
+          </p>
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

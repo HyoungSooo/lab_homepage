@@ -30,6 +30,7 @@
 
     <!-- Template Stylesheet -->
     <link href={% static 'indexpage/css/style.css' %} rel="stylesheet"/>
+    <link href={% static 'indexpage/css/style_detail.css' %} rel="stylesheet"/>
   </head>
 
   <body>
@@ -44,8 +45,8 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-secondary navbar-dark sticky-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
       <a href="{% url 'index' %}" class="navbar-brand ms-4 ms-lg-0">
-        <h1 class="mb-0 text-primary text-uppercase">
-          DATA and Process Engineering LAB
+        <h1 class="mb-0 text-primary text-uppercase font-custom font-color-custom">
+          <img class="img-logo" src="{% static 'indexpage/img/logo_2.png' %}">DATA and Process Engineering LAB
         </h1>
       </a>
       <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -60,6 +61,7 @@
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
             <div class="dropdown-menu m-0">
               <a href="{% url 'introduce' %}" class="dropdown-item">Our Member</a>
+              <a href="{% url 'others' %}" class="dropdown-item">Other Members</a>
               <a href="{% url 'pubilcation' %}" class="dropdown-item">PUBLICATIONS</a>
 
             </div>

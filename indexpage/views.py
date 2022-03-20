@@ -4,7 +4,7 @@ from django.template import RequestContext
 from django.views.generic import CreateView, DeleteView, ListView
 
 import indexpage
-from .models import IntroduceUs, WhatWeDo, PhotosTitle, PhotosTitle_Photos, Publications
+from .models import IntroduceUs, PublicationsYears, WhatWeDo, PhotosTitle, PhotosTitle_Photos, Publications, AlumniPhD, AlumniMs, PublicationsYears
 from django.views import generic
 # Create your views here.
 
@@ -46,9 +46,10 @@ def introduce(request):
 
 
 def pubilcation(request):
-    p = Publications.objects.all()
+    p_2022 = PublicationsYears.objects.get(year=2022)
+    p_2021 = PublicationsYears.objects.get(year=2021)
 
-    return render(request, 'indexpage/testimonial.html', context={'data': p})
+    return render(request, 'indexpage/testimonial.html', context={'data_2022': p_2022, 'data_2021': p_2021})
 
 
 def contact_us(request):
@@ -56,8 +57,12 @@ def contact_us(request):
 
 
 def post_detail(request, post_id):
-    object = WhatWeDo.objects.get(id=post_id)
-    context = {
-        'object': object,
-    }
-    return render(request, 'indexpage/detail.html', context)
+    object = WhatWeDo.objects.get(id=post_id).title
+    return render(request, f'indexpage/{object}.html')
+
+
+def others(request):
+    object_Ms = AlumniMs.objects.all()
+    object_phd = AlumniPhD.objects.all()
+
+    return render(request, 'i ndexpage/other_members.html', context={'object_Ms': object_Ms, 'object_phd': object_phd})

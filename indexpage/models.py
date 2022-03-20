@@ -38,6 +38,10 @@ class WhatWeDo(models.Model):
 class WhatWeDoDetail(models.Model):
     title = models.ForeignKey(
         WhatWeDo, on_delete=models.CASCADE, related_name="whatwedo")
+    img = models.ImageField(upload_to='detailpic')
+
+    def __str__(self):
+        return self.title
 
 
 class IntroduceUs(models.Model):
@@ -63,11 +67,17 @@ class AlumniPhD(models.Model):
     company = models.CharField(max_length=50)
     email = models.EmailField()
 
+    def __str__(self):
+        return self.name
+
 
 class AlumniMs(models.Model):
     name = models.CharField(max_length=30, blank=False)
     company = models.CharField(max_length=50)
     email = models.EmailField()
+
+    def __str__(self):
+        return self.name
 
 
 class PhotosTitle(models.Model):
